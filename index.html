@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F8FF;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            margin-left: 10px;
+        }
+        .filter-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .filter-button {
+            margin-bottom: 10px;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #E0FFFF;
+        }
+        .list-item:hover {
+            background-color: #B0E0E6;
+        }
+        .list-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .list-item .description {
+            flex-grow: 1;
+        }
+        .community-post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #E0FFFF;
+        }
+        .community-post img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .community-post .description {
+            flex-grow: 1;
+            overflow: auto;
+            max-height: 100px;
+        }
+        .community-post .like-button, .community-post .comment-button {
+            margin-left: 10px;
+        }
+        /* Improved contrast */
+        .navbar a, .filter-button {
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .navbar a:hover, .filter-button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="search-container">
+            <label for="searchLocation">Search Location:</label>
+            <input type="text" id="searchLocation" class="search-input" placeholder="Search location">
+            <button>Search</button>
+        </div>
+        <div>
+            <a href="#community">Community</a>
+            <a href="#explore">Explore</a>
+        </div>
+    </div>
+
+    <div id="explore" style="margin-top: 20px;">
+        <div class="filter-container">
+            <button class="filter-button">Plants</button>
+            <button class="filter-button">Animals</button>
+            <button class="filter-button">Both</button>
+        </div>
+        <div class="list-item">
+            <img src="plant.jpg" alt="Plant">
+            <div class="description">
+                <h3>Plant Name</h3>
+                <p>Description of the plant.</p>
+            </div>
+        </div>
+        <!-- Add more list items as needed -->
+    </div>
+
+    <div id="community" style="margin-top: 20px;">
+        <button onclick="showForm()">Add Post</button>
+        <div id="postForm" style="display: none;">
+            <label for="imageUpload">Upload Image:</label>
+            <input type="file" id="imageUpload">
+            <label for="postDescription">Post Description:</label>
+            <textarea id="postDescription" placeholder="Description"></textarea>
+            <button onclick="submitPost()">Submit</button>
+        </div>
+        <div class="community-post">
+            <img src="post.jpg" alt="Post">
+            <div class="description">
+                <p>Post description...</p>
+            </div>
+            <button class="like-button">Like</button>
+            <button class="comment-button">Add Comment</button>
+        </div>
+        <!-- Add more community posts as needed -->
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('postForm').style.display = 'block';
+        }
+
+        function submitPost() {
+            // Implement post submission logic here
+            alert('Post submitted!');
+        }
+    </script>
+</body>
+</html>
